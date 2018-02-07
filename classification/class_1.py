@@ -32,8 +32,12 @@ def classify(x,y):
 	else:
 		return "Ambiguous"
 
-print(classify(-10,0))
-print(classify(0,20))
-print(classify(5,0))
-print(classify(12,-20))
+count=0
+for i in range(-10,10):
+	for j in range(-10,10):
+		if classify(i,j)=="Ambiguous":
+			count=count+1 
+
+print(count)
+
 
