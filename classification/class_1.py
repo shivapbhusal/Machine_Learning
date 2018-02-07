@@ -1,8 +1,8 @@
 # A python program to plot different equations and see the result
 # [1] 5x+5y-1=0, [2] -x+y+1=0 and [3] x-10=0 
 
-import matplotlib.pyplot as plt
-import numpy as np
+#import matplotlib.pyplot as plt
+#import numpy as np
 
 def check1(x,y):
 	if 5*x+5*y-1>0:
@@ -23,17 +23,17 @@ def check3(x,y):
 		return False 
 
 def classify(x,y):
-	if check1(x,y)==True and check2==False and check3==False:
+	if check1(x,y)and not check2(x,y) and not check3(x,y):
 		return "Class 1"
-	elif check1(x,y)==False and check2==True and check3==False:
+	elif not check1(x,y) and check2(x,y) and not check3(x,y):
 		return "Class 2"
-	elif check1(x,y)==False and check2==False and check3==True:
+	elif not check1(x,y) and not check2(x,y) and check3(x,y):
 		return "Class 3"
 	else:
 		return "Ambiguous"
 
 print(classify(-10,0))
+print(classify(0,20))
 print(classify(5,0))
-print(classify(12,-20))		
-print(classify(11, -11))
+print(classify(12,-20))
 
