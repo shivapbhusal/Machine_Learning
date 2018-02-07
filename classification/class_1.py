@@ -5,19 +5,19 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 def check1(x,y):
-	if 5*x+5*y-1>=0:
+	if 5*x+5*y-1>0:
 		return True 
 	else:
 		return False 
 
 def check2(x,y):
-	if -x+y+1>=0:
+	if -x+y+1>0:
 		return True
 	else:
 		return False 
 
 def check3(x,y):
-	if x-10>=0:
+	if x-10>0:
 		return True 
 	else:
 		return False 
@@ -32,22 +32,8 @@ def classify(x,y):
 	else:
 		return "Ambiguous"
 
-for i in range(-10,10):
-	for j in range(-10,10):
-		print(classify(i,j))
-
-x = np.arange(0.0, 1.0, 0.5)
-y1 = 0.2-x
-y2= x-1 
-x3=0.1
-plt.plot(x, y1)
-plt.plot(x, y2)
-plt.plot(x3)
-
-plt.xlabel('X-axis')
-plt.ylabel('Y-axis')
-plt.title('Plotting Equation y=x*x+2')
-plt.grid(True)
-plt.show()
-
+print(classify(-10,0))
+print(classify(5,0))
+print(classify(12,-20))		
+print(classify(11, -11))
 
