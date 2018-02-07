@@ -6,7 +6,7 @@
 
 
 def check12(x,y):
-	if 5*x+5y-1>0:
+	if 5*x+5*y-1>0:
 		return True 
 	else:
 		return False 
@@ -36,7 +36,7 @@ def classify(x,y):
 count=0 
 for i in range(-10, 10):
 	for j in range(-10,10):
-		if classify(i,j)=="Ambigious":
+		if classify(i,j)=="Ambiguous":
 			count=count+1 
 
 print(count)

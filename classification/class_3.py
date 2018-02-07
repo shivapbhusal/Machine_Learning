@@ -20,7 +20,7 @@ def check12(x,y):
 		return False 
 
 def check23(x,y):
-	if equ2(x,y)-equ3(x,y):
+	if equ2(x,y)-equ3(x,y)>0:
 		return True
 	else:
 		return False 
@@ -32,7 +32,7 @@ def check13(x,y):
 		return False 
 
 def classify(x,y):
-	if check12(x,y)and check13(x,y):
+	if check12(x,y) and check13(x,y):
 		return "Class 1"
 	elif check23(x,y) and not check12(x,y):
 		return "Class 2"
