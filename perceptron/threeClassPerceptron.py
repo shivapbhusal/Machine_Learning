@@ -48,9 +48,9 @@ YCA=[8,7.5,10,8.5,6,7,6,6.5]
 NewPoints=[[]]
 
 def findClass(x,y):
-    if calculateOutput(THETA,findWeights(XAB,YAB),3.5,3.5)>calculateOutput(THETA,findWeights(XBC,YBC),3.5,3.5) and calculateOutput(THETA,findWeights(XAB,YAB),3.5,3.5)>calculateOutput(THETA,findWeights(XCA,YCA),3.5,3.5):
+    if calculateOutput(THETA,findWeights(XAB,YAB),x,y)>calculateOutput(THETA,findWeights(XBC,YBC),3.5,3.5) and calculateOutput(THETA,findWeights(XAB,YAB),3.5,3.5)>calculateOutput(THETA,findWeights(XCA,YCA),3.5,3.5):
         print("Class A")
-    elif calculateOutput(THETA,findWeights(XBC,YBC),3.5,3.5)>calculateOutput(THETA,findWeights(XAB,YAB),3.5,3.5) and calculateOutput(THETA,findWeights(XBC,YBC),3.5,3.5):
+    elif calculateOutput(THETA,findWeights(XBC,YBC),x,y)>calculateOutput(THETA,findWeights(XAB,YAB),3.5,3.5) and calculateOutput(THETA,findWeights(XBC,YBC),3.5,3.5):
         print("Class B")
     else:
         print("Class C") 
