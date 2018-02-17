@@ -1,7 +1,5 @@
 # Python implementation of a simple Perceptron 
-#Author: Shiva Bhusal 
-# Acknowledgement: This program has been partly inspired from the Java implementation discussed in https://www.youtube.com/watch?v=4aksMtJHWEQ&t=623s
-
+# Author: Shiva Bhusal 
 
 def calculateOutput(theta,weights, x,y):
     sum=x*weights[0]+y*weights[1]+weights[2]
@@ -38,3 +36,7 @@ print(weights)
 
 print(calculateOutput(THETA,weights,3.5,3.5))
 print(calculateOutput(THETA, weights,-3.5,-3.5))
+
+
+
+# Acknowledgement:Perceptron discussion in Java: https://www.youtube.com/watch?v=4aksMtJHWEQ&t=623s

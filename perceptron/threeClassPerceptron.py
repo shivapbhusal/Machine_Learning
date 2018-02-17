@@ -1,6 +1,5 @@
 # Python implementation of a simple Perceptron 
 #Author: Shiva Bhusal, BGSU  
-# Acknowledgement: 
 
 THETA=0
 INSTANCES=8
