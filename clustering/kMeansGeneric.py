@@ -11,6 +11,7 @@ Created By: Shiva Bhusal, BGSU
 
 import sys
 import math
+import time
 
 def findCenter(cluster):
     x=0
@@ -51,14 +52,23 @@ def kMeans(data, k):
         clusters.append([])
 
     newCenters=[]
+    count=0
     while newCenters!=centers:
-        newCenters=centers
+        newCenters=[]
+        for c in centers:
+            newCenters.append(c)
+        count=count+1
         for point in data:
             j=getNearestCluster(point, centers)
             clusters[j].append(point)
 
         for i in range(len(clusters)):
             centers[i]=findCenter(clusters[i])
+
+        print(str(count)+" iterations.")
+        print(centers)
+        print(newCenters)
+        #time.sleep(0.5)
 
     return clusters
 
