@@ -17,10 +17,35 @@ class MaxMin():
     	print(posOfMax)
 
     	clusterCenter.append(data(posOfMax))
-    	while(newCluster not in clusterCenter):
+    	newCluster=clusterCenter[0]
+    	while(True):
+    		newCluster=findPotentialCenter(data, centers)
+    		if distance(newCluster)>getAvgDist(distances):
+    			if newCluster in clusterCenter:
+    				break
+    			else:
+    				if self.findDistance(newCluster,data[0])>0.5*self.getAvgDist(clusterCenter):
+    					clusterCenter.append(newCluster)
+
+    def getAvgDist(clusterCenter):
+    	count=0
+    	totalDist=0
+    	for i in range(len(clusterCenter)):
+    		for j in range(i,len(clusterCenter)):
+    			totalDist=totalDist+findDistance(clusterCenter[i], clusterCenter[j])
+    	return totalDist/count
+
+    def findPotentialCenter(data, centers):
+    	dist=[]
+    	for patterns in data:
     		temp=[]
-    		for points in data:
-    			getMinimum(points)
+    		for c in centers:
+    			temp.append(self.findDistance(data,c))
+    		minPos=findPosOfMin(temp)
+    		dist.append(data[minPos])
+    		#Find the center as well.
+    	posOfMax=self.findPosOfMax(dist)
+    	return data[posOfMax]
 
     def findPosOfMax(self, distances):
     	posMax=0
@@ -30,6 +55,15 @@ class MaxMin():
     			maxDist=distances[i]
     			posMax=i
     	return posMax
+
+    def findPosOfMin(self, distances):
+    	posMin=0
+    	minDist=0
+    	for i in range(len(distances)):
+    		if distances[i]<minDist:
+    			minDist=distances[i]
+    			posMin=i
+    	return posMin
 
     def findDistance(self,p1, p2):
     	return 0.1
