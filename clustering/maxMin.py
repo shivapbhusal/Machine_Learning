@@ -15,7 +15,12 @@ class MaxMin():
     		distances.append(self.findDistance(points,clusterCenter))
     	posOfMax=self.findPosOfMax(distances)
     	print(posOfMax)
-    	
+
+    	clusterCenter.append(data(posOfMax))
+    	while(newCluster not in clusterCenter):
+    		temp=[]
+    		for points in data:
+    			getMinimum(points)
 
     def findPosOfMax(self, distances):
     	posMax=0
@@ -27,7 +32,13 @@ class MaxMin():
     	return posMax
 
     def findDistance(self,p1, p2):
-    	return 0.5
+    	return 0.1
+
+    def getMinimum(self, val1, val2):
+    	if val1>val2:
+    		return val2
+    	else:
+    		return val1
 
 testData=[[1,1],[2,1],[3,1],[3,2],[10,10],[10,15],[12,15],[0,0],[90,10],[-1,-1]]
 
